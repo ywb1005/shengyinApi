@@ -27,7 +27,8 @@ if(isset($userid))
 		$res = mysql_query($select_sql);
 		while($data = mysql_fetch_assoc($res))
 		{
-			$response['data'] = $data;
+			$zan = explode(',',$data['zan']);
+			$response['data'] = $zan;
 		}
 		$response['code'] = '200';
 		$response['success'] = 'true';

@@ -27,7 +27,8 @@ if(isset($userid))
 		$response['message'] = '请求访问成功';
 		while($data = mysql_fetch_assoc($res))
 		{
-			$response['data'] = $data;
+			$getcollected = explode(',',$data['collected']);
+			$response['data'] = $getcollected;
 		}
 		echo json_encode($response);
 	}else
